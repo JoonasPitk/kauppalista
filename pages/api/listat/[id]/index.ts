@@ -1,4 +1,5 @@
 import type {NextApiRequest, NextApiResponse} from 'next';
+
 import {getDatabase} from '@/utils/db';
 import {ErrorResponse} from '@/utils/ErrorResponse';
 import {ShopList} from '@/utils/types';

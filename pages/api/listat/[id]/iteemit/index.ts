@@ -7,7 +7,7 @@ import {tryParseInt} from '@/utils/numbers';
 
 export default async function handler(
     req: NextApiRequest,
-    res: NextApiResponse<ShopListItem[] | ErrorResponse>
+    res: NextApiResponse<ShopListItem[] | ShopListItem | ErrorResponse>
 ) {
     const {query} = req;
     const db = await getDatabase();
@@ -33,5 +33,7 @@ export default async function handler(
             return;
         }
         const sequence = await db.addItemToList(listId, text);
+        const item = await db.getListItem(listId, sequence);
+        res.status(201).json(item);
     }
 }

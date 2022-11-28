@@ -2,6 +2,7 @@
 
 import * as sqlite from "sqlite";
 import sqlite3 from "sqlite3";
+
 import {ShopList, ShopListItem} from "./types";
 
 export async function getDatabase() {
