@@ -45,5 +45,3 @@ export const getServerSideProps: GetServerSideProps<PropsType> = async (
         props: {listat},
     };
 };
-
-
