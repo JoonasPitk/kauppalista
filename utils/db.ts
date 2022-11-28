@@ -52,7 +52,6 @@ export class Database {
             WHERE list_id = ?`,
             listId
         );
-        console.log(result);
         const maxSeq: number = result.maxSeq ?? 0;
         const sequence = maxSeq + 1;
 
