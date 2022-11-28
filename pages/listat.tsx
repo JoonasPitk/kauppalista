@@ -28,7 +28,11 @@ export default function ListatSivu({listat}: PropsType) {
         <Page title="Listat">
             <ul>
                 {listat.map((lista) => (
-                    <ListItem id={lista.id} text={lista.name} />
+                    <ListItem
+                        key={lista.id}
+                        id={lista.id}
+                        text={lista.name}
+                    />
                 ))}
             </ul>
         </Page>
@@ -36,11 +40,8 @@ export default function ListatSivu({listat}: PropsType) {
 }
 
 
-export const getServerSideProps: GetServerSideProps<PropsType> = async (
-    context
-) => {
-    const listat: ShopList[] = await callApi(context.req, "/api/listat");
-
+export const getServerSideProps: GetServerSideProps<PropsType> = async () => {
+    const listat: ShopList[] = await callApi("/api/listat");
     return {
         props: {listat},
     };

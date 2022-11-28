@@ -130,4 +130,4 @@ async function kokeile() {
     console.log(ekanListanIteemit);
 }
 
-kokeile();
+// kokeile();
