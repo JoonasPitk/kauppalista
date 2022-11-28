@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image'
 import {Container, Nav, Navbar, NavDropdown} from 'react-bootstrap';
 
 export function CustomNavbar() {
@@ -7,6 +8,11 @@ export function CustomNavbar() {
             <Container>
                 <Link href="/">
                     <Navbar.Brand>
+                        <Image src="/kauppalista.png"
+                            width={32}
+                            height={32}
+                            alt=""
+                        />
                         Kauppalista
                     </Navbar.Brand>
                 </Link>
@@ -16,8 +22,8 @@ export function CustomNavbar() {
                         <Nav.Link as={Link} href="/">
                                 Etusivu
                         </Nav.Link>
-                        <Nav.Link as={Link} href="/joku/sivu">
-                                Joku sivu
+                        <Nav.Link as={Link} href="/listat">
+                                Listat
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
